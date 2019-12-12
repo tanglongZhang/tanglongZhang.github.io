@@ -194,6 +194,21 @@
     <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
     <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
     
+        <!-- algolia -->
+        <script>
+            
+            var hits = JSON.parse('{"per_page":10}')
+            var labels = JSON.parse('{"input_placeholder":"Search for Posts","hits_empty":"We did not find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}')
+
+            var algolia = {
+                applicationID: 'NE6Z15E626',
+                apiKey: 'ce7bae35e8beba253aeb03202ff80c7f',
+                indexName: 'Search-Only API Key',
+                hits: hits,
+                labels: labels
+            }
+        </script>
+    
     <!-- fancybox -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
     <!-- 百度统计  -->
@@ -387,7 +402,7 @@
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "项目管理,PMP">项目管理,PMP</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "项目管理">项目管理</a>
     
 </div>
             
@@ -405,10 +420,11 @@
                 <span>关于搭建个人博客的初衷和感慨</span>
         </a>
         <div class="abstract-content">
-            前言   在写这篇博文之前，我的内心还是比较忐忑的，因为我很少写这种博文类型的文章，也不知道自己能不能写好，也不知道能不能一直坚持下去。   但仔细一想，决定开始写博客的初衷主要还是为了提升自己和记录工作生活的点点滴滴，或许在多年以后再回头看看这些年的成长历程，也不失为一种乐趣，也是对自己人生经历的复盘。
+            
+前言   在写这篇博文之前，我的内心还是比较忐忑的，因为我很少写这种博文类型的文章，也不知道自己能不能写好，也不知道能不能一直坚持下去。   但仔细一想，决定开始写博客的初衷主要还是为了提升自己和记录工作生活的点点滴滴，或许在多年以后再回头看看这些年的成长历程，也不失为一种乐趣，也是对自己人生经历的复盘。
 溯源   最初想做博客要追溯到16年，在无意间产生了做博客的想法，本着码农无所畏惧一往无前的精神，开始了我的写博客之旅，一直至今，终于开始正式写博了，这么多年具体战果如下：
 
-2016年9月-2017年3月开始使用Spring mvc + Hibernate +oracle 写自己的博...
+2016年9月-2017年3月开始使用Spring mvc + Hibernate +oracle 写自己的...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -597,13 +613,15 @@ More ...
     
     
     
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 4
         </div>
         <!-- search  -->
+        
+            <div class="site-search popup-trigger">
+                <span class="iconfont-archer search-icon">&#xe627;</span>
+            </div>
         
     </div>
     
@@ -611,6 +629,20 @@ More ...
     
     
     
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2019/12/10/%E5%85%B3%E4%BA%8EPMP%E7%9F%A5%E8%AF%86%E7%82%B9%E6%A2%B3%E7%90%86%E5%9B%9E%E9%A1%BE%EF%BC%88%E4%BA%8C%EF%BC%89/" >关于PMP知识点梳理回顾（二）</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
     
     <div class="archive-year"> Invalid date </div>
     <ul class="year-list">
@@ -631,11 +663,6 @@ More ...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2019/12/10/%E5%85%B3%E4%BA%8EPMP%E7%9F%A5%E8%AF%86%E7%82%B9%E6%A2%B3%E7%90%86%E5%9B%9E%E9%A1%BE%EF%BC%88%E4%BA%8C%EF%BC%89/" >关于PMP知识点梳理回顾（二）</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2019/12/10/%E5%85%B3%E4%BA%8EPMP%E7%9F%A5%E8%AF%86%E7%82%B9%E6%A2%B3%E7%90%86%E5%9B%9E%E9%A1%BE%EF%BC%88%E4%B8%80%EF%BC%89/" >关于PMP知识点梳理回顾（一）</a>
         </li>
     
@@ -649,7 +676,7 @@ More ...
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="项目管理,PMP"><span class="iconfont-archer">&#xe606;</span>项目管理,PMP</span>
+        <span class="sidebar-tag-name" data-tags="项目管理"><span class="iconfont-archer">&#xe606;</span>项目管理</span>
     
         <span class="sidebar-tag-name" data-tags="总结"><span class="iconfont-archer">&#xe606;</span>总结</span>
     
@@ -709,6 +736,29 @@ jsonContent:
     </script>
     <script src="/scripts/main.js"></script>
     <!-- algolia -->
+    
+        <div class="site-search">
+  <div class="algolia-popup popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="iconfont-archer">&#xe609;</i>
+    </span>
+  </div>
+</div>
+        <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.8.0/dist/instantsearch.min.js" defer></script>
+        <script src="/scripts/search.js" defer></script>
     
     <!-- busuanzi  -->
     
