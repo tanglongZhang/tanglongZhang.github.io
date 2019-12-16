@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tanglongzz.top/"/>
-  <updated>2019-12-16T04:18:18.652Z</updated>
+  <updated>2019-12-16T09:54:38.048Z</updated>
   <id>https://tanglongzz.top/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>项目生命周期及敏捷方法</title>
+    <link href="https://tanglongzz.top/2019/12/16/%E9%A1%B9%E7%9B%AE%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%8F%8A%E6%95%8F%E6%8D%B7%E6%96%B9%E6%B3%95/"/>
+    <id>https://tanglongzz.top/2019/12/16/%E9%A1%B9%E7%9B%AE%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%8F%8A%E6%95%8F%E6%8D%B7%E6%96%B9%E6%B3%95/</id>
+    <published>2019-12-16T08:12:13.000Z</published>
+    <updated>2019-12-16T09:54:38.048Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近在学习敏捷项目管理，也顺带回顾了下项目管理的知识，为了方便查阅和巩固知识点，我把我所理解的内容作了一个整理，今天主要说下项目的生命周期以及不同的项目如何选择不同的生命周期，以达到最好的项目效果。</p><h1 id="项目生命周期概述"><a href="#项目生命周期概述" class="headerlink" title="项目生命周期概述"></a>项目生命周期概述</h1><p>项目有多种形式，也有多种实施方式。项目经理及团队成员需要认识到相关特征和方案，以选择最可能使项目成功的方法。</p><p>项目的生命周期有很多种，我整理的主要有4种，分别定义如下：</p><ul><li><p>预测型生命周期，这是一种更为传统的方法，提前进行大量的计划工作，然后一次性</p><p>执行；执行是一个连续的过程。</p></li><li><p>迭代型生命周期，这种方法允许对未完成的工作进行反馈，从而改进和修改该工作。</p></li><li><p>增量型生命周期，这种方法向客户提供各个己完成的，可能立即使用的可交付成果。</p></li><li><p>敏捷生命周期，这种方法既有迭代，也有增量，便于完善工作，频繁交付。</p></li></ul><p>每个生命周期都有自己的特征，下面我对4种生命周期的特征列了一张表，以便于理解各种生命周期的特征。</p><p>​                                                                      表一、项目生命周期特征</p><table><thead><tr><th>(Approach)</th><th>需求(Requirements)</th><th>变更(Activities)</th><th>交付(Delivery)</th><th>目标(Goal)</th></tr></thead><tbody><tr><td>预测型(Predictive)</td><td>固定的(Fixed)</td><td>整个项目执行一次(Performed once for the entire Project)</td><td>一次交付(Single delivery)</td><td>管理成本(Manage cost)</td></tr><tr><td>迭代型(Iterative)</td><td>动态的(Dynamic)</td><td>重复的(Repeated until correct)</td><td>一次交付(Single delivery)</td><td>正确性(Correctness of solution)</td></tr><tr><td>增量型(Incremental)</td><td>动态的(Dynamic)</td><td>定量增量执行一次(Performed once for a given increment)</td><td>频繁的小规模交付(Frequent smaller deliveries)</td><td>速度(Speed)</td></tr><tr><td>敏捷型(Agile)</td><td>动态的(Dynamic)</td><td>重复的(Repeated until correct)</td><td>频繁的小规模交付(Frequent smaller deliveries)</td><td>通过频繁的交付和反馈实现客户价值(Customer value via frequent deliveries and feedback )</td></tr></tbody></table><p>需要注意的是，所有的项目都具有这些特征，没有一个项目能够完全不考虑需求、交付、变更和目标这些因素。项目的固有特征决定了其适合采用哪种生命周期。<br>另一种理解不同项目生命周期的方法是，使用一个连续区间，从一端的预测型周期到另一端的敏捷型周期，连续区间中间还有更多的迭代型周期或增量型周期。下图展示了生命周期的连续区间。</p><p><img src="/2019/12/16/%E9%A1%B9%E7%9B%AE%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%8F%8A%E6%95%8F%E6%8D%B7%E6%96%B9%E6%B3%95/1.png" alt="生命周期的连续区间"></p><p>没有哪个生命周期能够完美地适用于所有的项目。相反，每个项目都能在连续区间中找到一个点，根据其背景特征，实现最佳平衡。特别是，</p><ul><li>预测型生命周期。充分利用己知和己经证明的事物。不确定性和复杂性的减少，允许项目团队将工作分解为一系列可预测的小组。</li><li>迭代型生命周期。允许对部分完成或未完成的工作进行反馈，从而对该工作进行改进和修改。</li><li>增量型生命周期。可向客户提供完成的可交付成果，让客户能够立即使用。</li><li>敏捷生命周期。它同时利用迭代属性和增量特征。团队使用敏捷方法时，他们会对产品进行迭代，创建完成的可交付成果。团队将获得早期的反馈，并能提供客户可见性、信心和对产品的控制。由于团队可以提前发布产品，而团队将率先交付价值最高的工作，所以项目可以更早产生投资回报。</li></ul><p>还有一个需要特别注意的点，每种生命周期都有计划要素，包含敏捷项目，所以计划在项目过程中是非常重要的一环。</p><h1 id="敏捷生命周期"><a href="#敏捷生命周期" class="headerlink" title="敏捷生命周期"></a>敏捷生命周期</h1><p>在描述敏捷项目周期之前，先要说说2001年，软件业思想领袖共同发表《敏捷宣言》，原文是：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">We are uncovering better ways of developing software by doing it and helpin</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">g others do it.Through this work we have come to value:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">**Individuals and interactions** over processes and tools</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">**Working software** over comprehensive documentation</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">**Customer collaboration** over contract negotiation</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">**Responding to change** over following a plan</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">That is,while there is value in the items on the right,we value the items</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">on the left more.</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">©2001，theAgileManifestoauthors</span></pre></td></tr></table></figure><p>我们主要看4个点：</p><ol><li>流程和工具上的个人和交互</li><li>工作软件胜过全面的文档</li><li>合同谈判中的客户协作</li><li>响应变化胜过遵循计划</li></ol><p>这4个点也叫敏捷项目的四大原则，那么敏捷生命周期是什么呢？</p><p>其实敏捷生命周期就是符合《敏捷宣言》原则的周期。特别是，客户满意度将随着有价值产品的早期交付和持续交付不断提升。此外，功能性的、提供价值的增量可交付成果，是衡量进展的主要尺度。为了适应更频繁的变更，和更频繁地交付项目价值，敏捷生命周期结合了迭代和增量方法。</p><p>在敏捷环境中，团队预料需求会发生变更。迭代和增量方法能够提供反馈，以便改善项目下一部分的计划。不过，在敏捷项目中，增量交付会发现隐藏或误解的需求。下图显示了实现增量交付的两种可能的方法，这样将便于项目与客户需求保持一致，并根据需要进行调整。</p><p><img src="/2019/12/16/%E9%A1%B9%E7%9B%AE%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%8F%8A%E6%95%8F%E6%8D%B7%E6%96%B9%E6%B3%95/2.png" alt="基于迭代和基于敏捷的生命周期"></p><p>在基于迭代的敏捷中，团队以迭代（相等持续时间的时间盒）形式交付完整的功能。团队集中于最重要的功能，作为一个团队合作完成其工作。然后，团队再集中于下一项最重要的功能，并合作完成其工作。团队可决定一次进行若干功能的开发工作，但团队不会同时完成所有的迭代工作（即团队不会在完成全部分析等工作后再解决所有需求）。</p><p>对于建立在流程基础上的敏捷方法，团队将根据自身能力，从待办事项列表中提取若干功能开始工作，而不是按照基于迭代的进度计划开始工作。团队定义任务板各列的工作流，并管理各列的进行中的工作。完成不同功能所花费的时间可能有所不同。团队让进行中的工作的规模尽量小，以便尽早发现问题，并在需要变更时减少返工。无需利用迭代定义计划和审核点，而由团队和业务相关方决定规划、产品评审与回顾的最适当的进度计划。</p><h1 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h1><p>按我的理解，敏捷方法可以完全重新开发，只需符合《敏捷宣言》的思维模式、价值观和原则即可，根据不同项目的需要，裁剪敏捷方法。在裁剪过程中，应与同事或者可能受变更影响的人员合作执行裁剪。这些人员需要参与变更过程的相关思考和决策过程，以执行和支持这些变更活动，确保成功过渡。忽视裁剪过程可能会导致相关人员抗拒这些变更，即使从技术层面来看存在价值。</p><p>关于敏捷方法，我对其的理解主要是理论上的，还没有经过实践考证，若有一天有大佬看到我这篇文章，还望留言纠正。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;最近在学习敏捷项目管理，也顺带回顾了下项目管理的知识，为了方便查阅和巩固知识点，我把我所理解的内容作了一个整理，今天主要说下项目的生命周期以
+      
+    
+    </summary>
+    
+    
+    
+      <category term="项目管理" scheme="https://tanglongzz.top/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>项目和项目管理的理解（未完）</title>
