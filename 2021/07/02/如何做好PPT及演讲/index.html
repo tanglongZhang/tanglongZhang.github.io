@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+    <meta name="author" content="tanglongZhang">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="tanglongZhang">
+    
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    
+    <meta name="description" content="">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>如何做好PPT及演讲 · tanglongzz</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href= "/assets/favicon.ico" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
+    <link rel="preload" href="/scripts/main.js" as="script" />
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+        <!-- algolia -->
+        <script>
+            
+            var hits = JSON.parse('{"per_page":10}')
+            var labels = JSON.parse('{"input_placeholder":"Search for Posts","hits_empty":"We did not find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}')
+
+            var algolia = {
+                applicationID: 'NE6Z15E626',
+                apiKey: 'ce7bae35e8beba253aeb03202ff80c7f',
+                indexName: 'tanglongzz',
+                hits: hits,
+                labels: labels
+            }
+        </script>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+<meta name="generator" content="Hexo 4.1.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Ability, responsibility and management</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">如何做好PPT及演讲</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href=/>Ability, responsibility and management</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            如何做好PPT及演讲
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "演讲技巧">演讲技巧</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">3.2k</span>Reading time: <span class="post-count reading-time">10 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2021/07/02</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <p><img src="/2021/07/02/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BDPPT%E5%8F%8A%E6%BC%94%E8%AE%B2/%E5%B0%81%E9%9D%A2.jpg" alt></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><p>其实我之前是不太觉得做PPT和讲PPT很难，因为我觉得以我目前的工作经验和经历完全能够轻松的做好这两件事情，可往往人在最自信的时候才最容易被打脸，事实也证明了，我被打脸了，还打得很疼。</p>
+<p>事情经过是这样的，去年夏天我去一家公司面试项目经理，第一轮面试的时候对方公司所问的问题，我都能够很好的去应对，所以我很顺利的进入了第二轮，通知我第二轮面试的时候，对方要求我做一个项目复盘PPT，并进行演讲，我花了2天的时间写内容、做PPT，对自己充满了自信，可真到二面的时候，我却讲得毫无条理，面试完之后面试官只说了一句话，“某某某，你这演讲怎么回事呀”，就这样我也顺理成章的被PASS掉了。很尴尬的一次经历，也是很有意义的一次经历，让我很深刻的认识到自己不足的地方，也做了很多提高自己演讲能力的训练，这次我想总结如何做好PPT和演讲，也是为了锻炼自己总结提炼能力，也希望能够为同样苦恼于做不好PPT和演讲的同仁，提供一点点自己的思路。</p>
+<p>那么，如何进行一场PPT演讲呢？我结合了自身的经验，和以往失败的经历，从如何准备PPT和如何演讲两个方面和大家一起分享探讨这个话题。</p>
+<h1 id="一、如何准备PPT？"><a href="#一、如何准备PPT？" class="headerlink" title="一、如何准备PPT？"></a>一、如何准备PPT？</h1><p>我觉得如何准备一个PPT是一个很大的话题，有的人做PPT内容会做的很好，但是演示的时候看起来的效果却不怎么样，有的人做的效果很炫，可内容确是一团糟毫无条理，PPT的制作说起来也很简单，但真正要做好且符合演讲场景，让人听着看到后眼前一亮，确是很有难度。下面我梳理了我自己做PPT的一些想法，也借鉴了一些别人分享的经验，希望能够帮助到大家。</p>
+<h2 id="1、在开始制作PPT之前，先了解一些基本信息。"><a href="#1、在开始制作PPT之前，先了解一些基本信息。" class="headerlink" title="1、在开始制作PPT之前，先了解一些基本信息。"></a>1、在开始制作PPT之前，先了解一些基本信息。</h2><p><img src="/2021/07/02/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BDPPT%E5%8F%8A%E6%BC%94%E8%AE%B2/%E4%BA%86%E8%A7%A3%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF.png" alt></p>
+<p>首先，要<strong>了解听众的属性</strong>，简单来说就是讲给谁听，是给客户单位领导、还是公司上级、团队下级，这一点关系到你所要准备的内容。</p>
+<p>给大家举个例子，假如公司派我去给客户单位演示我们软件项目或产品研发进度，那么，我就需要了解听众到底是领导还是基层工作人员。听众的属性不同，那么，我就要准备不同的内容，假如要面向领导来讲，我就需要准备一些跟总体的进度和报表，而如果要面对基层工作人员，那么，我准备的可能是怎么样去使用我们的软件或产品的使用和说明。</p>
+<p>其次，要提前<strong>了解演讲的时长</strong></p>
+<p><img src="/2021/07/02/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BDPPT%E5%8F%8A%E6%BC%94%E8%AE%B2/%E6%BC%94%E8%AE%B2%E7%9A%84%E6%97%B6%E9%95%BF.png" alt></p>
+<p>这个就很好理解了，在这里提醒大家，如果主办方没有告诉你这一点，那么，你一定要问清楚演讲的时长，尤其是给领导汇报项目或者推广项目的时候。比方说进行一次大型的产品验证会演讲，规定每个产品只能讲10分钟，可8分钟过去了，你还没有讲到客户单位领导真正关心的地方，那就太失败了。</p>
+<h2 id="2、制作PPT之前，一定要把内容写出来"><a href="#2、制作PPT之前，一定要把内容写出来" class="headerlink" title="2、制作PPT之前，一定要把内容写出来"></a>2、制作PPT之前，一定要把内容写出来</h2><p><strong>PPT演讲的本质是传递信息</strong>，所以，你需要掌握如何把信息表述清楚的技巧。在这里推荐大家使用金字塔原理进行内容的构思和写作。</p>
+<p>那么，什么是金字塔原理呢？如果有考过研的人应该也知道到这原理，我在这里简单提一下。</p>
+<p><img src="/2021/07/02/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BDPPT%E5%8F%8A%E6%BC%94%E8%AE%B2/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86.png" alt></p>
+<p>当你要表述某一事情时，先把最终的观点写出来，然后寻找一级论据，完成第一次拆分。如果一级论据还能有二级论据来支撑，那么就继续拆分。如此往复，直到最终不能拆分。这样，就会形成一个金字塔型结构，就是我们写作中常用的金字塔原理。</p>
+<h2 id="3、内容起到的作用是提示，而非说明"><a href="#3、内容起到的作用是提示，而非说明" class="headerlink" title="3、内容起到的作用是提示，而非说明"></a>3、内容起到的作用是提示，而非说明</h2><p><img src="/2021/07/02/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BDPPT%E5%8F%8A%E6%BC%94%E8%AE%B2/%E6%8F%90%E7%A4%BA%E8%80%8C%E9%9D%9E%E8%AF%B4%E6%98%8E.png" alt></p>
+<p>在制作演讲型幻灯片时，千万不要想着做成信息说明书，把大量的文字和图片放在上面，然后自己傻乎乎地在台上照本念经。</p>
+<p>正确的做法是，提供必要的信息提示，能配合演讲即可。要不然，你站在台上讲什么呢？直接把PPT打印出来发给观众不就完了吗？</p>
+<p>因为从功能上来讲，演讲型PPT和说明书型PPT压根就不可能做成同样的内容。</p>
+<h2 id="4、多用图片，少用文字"><a href="#4、多用图片，少用文字" class="headerlink" title="4、多用图片，少用文字"></a>4、多用图片，少用文字</h2><p>一图胜千言，一张使用合理得当的图片所带给观众的视觉表现力，远超于文字。</p>
+<p>你花1000个字，准备了大量华丽的词藻来说明一个妹纸长相甜美，不如直接放上她的一张照片。</p>
+<p><img src="/2021/07/02/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BDPPT%E5%8F%8A%E6%BC%94%E8%AE%B2/%E7%BE%8E%E5%A5%B3.jpg" alt></p>
+<p>同样，你声情并茂地描述了建筑工人很辛苦，倒不如直接放一张工作照</p>
+<p><img src="/2021/07/02/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BDPPT%E5%8F%8A%E6%BC%94%E8%AE%B2/%E5%B7%A5%E4%BA%BA.jpg" alt></p>
+<p>之所以会产生这么大的差距，原因就在于是否在观众大脑中构建了画面感，因为大脑更容易接受视觉化的东西。当然，图片千般好，也不是说完全不用文字，在演讲PPT中，文字更多的起到了注解的作用。有时候，我们展示出一张图片，识图在观众脑中构建一个场景时，使用合理的文案，会产生更好的效果。</p>
+<h2 id="5、少用表格，多用图表"><a href="#5、少用表格，多用图表" class="headerlink" title="5、少用表格，多用图表"></a>5、少用表格，多用图表</h2><p>图表是表格信息的可视化表达方式，在上文中也说到了，PPT演讲的目的是传递信息，而大脑更容易接受视觉化的信息，所以，当要展示数据时，建议大家还是多用图表。</p>
+<p>大家可以对比两种形式的差别：</p>
+<p><img src="/2021/07/02/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BDPPT%E5%8F%8A%E6%BC%94%E8%AE%B2/%E5%9B%BE%E8%A1%A8.jpg" alt></p>
+<h2 id="6、使用必要的动画来引导观众的注意力"><a href="#6、使用必要的动画来引导观众的注意力" class="headerlink" title="6、使用必要的动画来引导观众的注意力"></a>6、使用必要的动画来引导观众的注意力</h2><p>注意我使用的词，是必要的动画，而不是大量的动画。</p>
+<p>在演讲PPT的制作中，切记，不要使用大量的动画效果，这样会让观众觉得你很浮夸。</p>
+<p><img src="/2021/07/02/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BDPPT%E5%8F%8A%E6%BC%94%E8%AE%B2/%E5%8A%A8%E7%94%BB.gif" alt></p>
+<h2 id="7、注重幻灯片风格的统一"><a href="#7、注重幻灯片风格的统一" class="headerlink" title="7、注重幻灯片风格的统一"></a>7、注重幻灯片风格的统一</h2><p><img src="/2021/07/02/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BDPPT%E5%8F%8A%E6%BC%94%E8%AE%B2/%E9%A3%8E%E6%A0%BC%E7%BB%9F%E4%B8%80.jpg" alt></p>
+<p><strong>语言风格上的统一</strong></p>
+<p>通俗点讲，幻灯片上的内容，要让观众感觉像是一个人写的，也就是说语气不变。</p>
+<p><strong>设计风格上的统一</strong></p>
+<p>这个主要体现在母版设计方面，主要由字体，背景，配色，效果等来体现出来。</p>
+<p><strong>素材风格上的统一</strong></p>
+<p>这里说的的素材主要指图片，如果你选择了使用扁平化图标，那么就不要想着再去使用拟物化图标，否则，会显得很乱。</p>
+<h2 id="8、注重封面和尾页设计"><a href="#8、注重封面和尾页设计" class="headerlink" title="8、注重封面和尾页设计"></a>8、注重封面和尾页设计</h2><p><img src="/2021/07/02/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BDPPT%E5%8F%8A%E6%BC%94%E8%AE%B2/%E5%B0%81%E9%9D%A2%E8%AE%BE%E8%AE%A1.png" alt></p>
+<p>封面决定了观众对幻灯片，甚至演讲的第一印象。</p>
+<p>它可以用来传递一个信息，告诉观众你要做什么：</p>
+<p><img src="/2021/07/02/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BDPPT%E5%8F%8A%E6%BC%94%E8%AE%B2/%E5%B0%81%E9%9D%A2%E8%AE%BE%E8%AE%A12.jpg" alt></p>
+<p>也可以用来提出一个问题，像老罗在T1发布会上提出的 【如何打造一款4000元的精品国产手机？】，或者像我这份课件PPT的封面一样：</p>
+<p><img src="/2021/07/02/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BDPPT%E5%8F%8A%E6%BC%94%E8%AE%B2/%E5%B0%81%E9%9D%A2%E8%AE%BE%E8%AE%A13.png" alt></p>
+<p>也可以展现一种态度：</p>
+<p><img src="/2021/07/02/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BDPPT%E5%8F%8A%E6%BC%94%E8%AE%B2/%E5%B0%81%E9%9D%A2%E8%AE%BE%E8%AE%A14.jpg" alt></p>
+<p>或者起到了话题引入的作用：</p>
+<p><img src="/2021/07/02/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BDPPT%E5%8F%8A%E6%BC%94%E8%AE%B2/%E5%B0%81%E9%9D%A2%E8%AE%BE%E8%AE%A15.png" alt></p>
+<p>这些都是封面设计时要考虑的功能，千万不能忽视。同样，尾页设计也需要注意功能性。</p>
+<p>正常情况下，我们会用谢谢来表示一种礼仪：</p>
+<p><img src alt></p>
+<p>也有时候，我们可以传递一种信息：</p>
+<p><img src alt></p>
+<p>或者是得出一种结论：    </p>
+<p><img src alt></p>
+<p>总之，封面和尾页设计时，不要简单地从美观性角度来思考，更多时候，要注重一种功能性的使用。</p>
+<h2 id="9、当演讲内容较多时，一定要使用目录页。"><a href="#9、当演讲内容较多时，一定要使用目录页。" class="headerlink" title="9、当演讲内容较多时，一定要使用目录页。"></a>9、当演讲内容较多时，一定要使用目录页。</h2><p>目录页的作用就相当于在观众脑中构建一个框架，它可能让观众大致明白你要讲哪些内容，以及各部分内容之间有什么关联性。</p>
+<p>给大家举个例子，在华为MATE8发布会上，就是从3大部分来介绍手机：</p>
+<p><img src="/2021/07/02/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BDPPT%E5%8F%8A%E6%BC%94%E8%AE%B2/%E7%9B%AE%E5%BD%95%E4%BD%BF%E7%94%A81.jpg" alt></p>
+<p>它的作用其实就是告诉观众，我们今天会从这3个部分来向你介绍我们的新手机。不仅如此，每一大部分下面如果又分为小部分，那么，还需要继续搭建目录页：</p>
+<p><img src="/2021/07/02/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BDPPT%E5%8F%8A%E6%BC%94%E8%AE%B2/%E7%9B%AE%E5%BD%95%E4%BD%BF%E7%94%A82.jpg" alt></p>
+<p>另外，不仅要在开始的时候展示目录页，在每一部分的结尾处，也要再次展示出来，并且把刚才讲的所有内容，简单回顾一下，然后再开始讲下一部分。</p>
+<p>上面就是我讲的，关于演讲PPT制作的所有要点，再来回顾一下：</p>
+<p><img src="/2021/07/02/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BDPPT%E5%8F%8A%E6%BC%94%E8%AE%B2/%E5%9B%9E%E9%A1%BE.png" alt></p>
+<h1 id="二、如何准备演讲？"><a href="#二、如何准备演讲？" class="headerlink" title="二、如何准备演讲？"></a>二、如何准备演讲？</h1><p>可能会有人跟我一样，刚开始在进行PPT演讲的时候，都会存在或多或少的紧张，接下来我们说到如何准备演讲，能够给自己增强自信，消除紧张感，那么闲话不多说，咱们进入第二部分，如何准备演讲？</p>
+<h2 id="1、一定要熟练地把演讲内容和PPT对应起来。"><a href="#1、一定要熟练地把演讲内容和PPT对应起来。" class="headerlink" title="1、一定要熟练地把演讲内容和PPT对应起来。"></a>1、一定要熟练地把演讲内容和PPT对应起来。</h2><p><img src="/2021/07/02/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BDPPT%E5%8F%8A%E6%BC%94%E8%AE%B2/%E6%BC%94%E8%AE%B2-%E5%86%85%E5%AE%B9%E5%AF%B9%E5%BA%94.png" alt></p>
+<p>台上一分钟，台下十年功，这话一点不假，口才再好的人也需要在台下把内容背熟。要做到看见PPT，就知道要说什么样的内容。</p>
+<p>这样做的好处就是能够将你的演讲内容固定下来，在大脑中形成一种触发机制，而且，还能够在一定程度上减轻紧张感。</p>
+<h2 id="2、一定要提前排练"><a href="#2、一定要提前排练" class="headerlink" title="2、一定要提前排练"></a>2、一定要提前排练</h2><p><img src="/2021/07/02/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BDPPT%E5%8F%8A%E6%BC%94%E8%AE%B2/%E6%8F%90%E5%89%8D%E6%8E%92%E7%BB%83.jpg" alt></p>
+<p>不管你的演讲是半个小时还是5个小时，你都要进行至少一次的完整排练，可以叫上你的朋友当观众，让他们提提意见。</p>
+<p> 罗辑思维创始人罗振宇在准备2015年跨年演讲前，还叫上一群好朋友在现场进行了一次长达4个小时的完整排练呢，你觉得你比他演讲还厉害吗？</p>
+<h2 id="3、开启演讲者视图。"><a href="#3、开启演讲者视图。" class="headerlink" title="3、开启演讲者视图。"></a>3、开启演讲者视图。</h2><p><img src="/2021/07/02/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BDPPT%E5%8F%8A%E6%BC%94%E8%AE%B2/%E6%BC%94%E8%AE%B2%E8%80%85%E8%A7%86%E5%9B%BE.jpg" alt></p>
+<p>PPT演讲跟其他类型演讲不同的一点就在于，PPT需要与演讲同步，虽然在第一点中就告诉你，要熟悉，熟悉，在熟悉，不过上场之后谁知道会发生什么意外的状况？所以，建议还是在幻灯片设置中，开始演讲者视图，这样，即便你忘记下一页是什么内容，那么你也可以偷偷瞄一眼。</p>
+<h2 id="4、刚开始就引起观众兴趣"><a href="#4、刚开始就引起观众兴趣" class="headerlink" title="4、刚开始就引起观众兴趣"></a>4、刚开始就引起观众兴趣</h2><p><img src="/2021/07/02/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BDPPT%E5%8F%8A%E6%BC%94%E8%AE%B2/%E5%BC%80%E5%A4%B4%E5%BC%95%E8%B5%B7%E5%85%B4%E8%B6%A3.jpg" alt></p>
+<p>如果你想让别人对你的演讲感兴趣，那么，你最好就做出一点让观众感兴趣的事情出来。一旦你成功吸引了观众的兴趣，那么接下来观众就会跟着你的思路去走，否则的话，估计台下会一大片睡觉或玩手机的。</p>
+<h2 id="5、多讲故事，多说人话"><a href="#5、多讲故事，多说人话" class="headerlink" title="5、多讲故事，多说人话"></a>5、多讲故事，多说人话</h2><p><img src="/2021/07/02/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BDPPT%E5%8F%8A%E6%BC%94%E8%AE%B2/%E6%95%85%E4%BA%8B%E6%80%A7.png" alt></p>
+<p>如果不是参加一些很严肃的演讲，最好不要开口闭口都是大道理，更不要使用过多太过于专业的名词或概念，这样会严重阻碍演讲信息的传达，因为很少有人能听懂你在说什么。</p>
+<p>正确的方式是把大道理隐藏在故事中，或者多举例子，没说一个难懂的概念时，就给大家举一个简单易懂的例子来辅助说明，深入浅出，才能取得更好的效果。</p>
+<p>给大家举个例子，当你说自己的耳机音色好的时候，不要去堆砌一大堆华丽的词藻，因为正常的人类是不会那样讲话的，倒不如这样：</p>
+<p><img src="/2021/07/02/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BDPPT%E5%8F%8A%E6%BC%94%E8%AE%B2/%E9%9F%B3%E4%B9%90.jpg" alt></p>
+<p>以上，就是我见过的，一些有用的演讲技巧，当然网上还有很多的演讲技巧，包括像站姿，着装，语气等，我个人不太喜欢，有点装X的嫌疑。</p>
+<p>最后，如果你真的对演讲非常感兴趣，那么推荐一本书，叫《演说之禅》，值得一读。</p>
+<p><u><em>此文参考邵云蛟老师关于如何做好PPT演讲的一篇文章，本人在此处梳理整合，仅作为学习使用，不做任何商业用途，如有侵权，请联系作者删除。</em></u></p>
+
+    </article>
+    <!-- license  -->
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2020/06/15/%E5%AE%9E%E6%96%BD%E6%95%8F%E6%8D%B7%EF%BC%9A%E5%9C%A8%E6%95%8F%E6%8D%B7%E7%8E%AF%E5%A2%83%E4%B8%AD%E4%BA%A4%E4%BB%98/" title= "实施敏捷：在敏捷环境中交付">
+                    <div class="prevTitle">实施敏捷：在敏捷环境中交付</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:980537098@qq.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/tanglongZhang" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title=wechat>
+                  
+                  <img class="profile-qr" src="/assets/example_qr.png" />
+                </span>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer qq" title=qq>
+                  
+                  <img class="profile-qr" src="/980537098" />
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="/atom.xml" class="iconfont-archer rss" target="_blank" title=rss></a>
+            
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一、如何准备PPT？"><span class="toc-number">2.</span> <span class="toc-text">一、如何准备PPT？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、在开始制作PPT之前，先了解一些基本信息。"><span class="toc-number">2.1.</span> <span class="toc-text">1、在开始制作PPT之前，先了解一些基本信息。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、制作PPT之前，一定要把内容写出来"><span class="toc-number">2.2.</span> <span class="toc-text">2、制作PPT之前，一定要把内容写出来</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、内容起到的作用是提示，而非说明"><span class="toc-number">2.3.</span> <span class="toc-text">3、内容起到的作用是提示，而非说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、多用图片，少用文字"><span class="toc-number">2.4.</span> <span class="toc-text">4、多用图片，少用文字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、少用表格，多用图表"><span class="toc-number">2.5.</span> <span class="toc-text">5、少用表格，多用图表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6、使用必要的动画来引导观众的注意力"><span class="toc-number">2.6.</span> <span class="toc-text">6、使用必要的动画来引导观众的注意力</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7、注重幻灯片风格的统一"><span class="toc-number">2.7.</span> <span class="toc-text">7、注重幻灯片风格的统一</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8、注重封面和尾页设计"><span class="toc-number">2.8.</span> <span class="toc-text">8、注重封面和尾页设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9、当演讲内容较多时，一定要使用目录页。"><span class="toc-number">2.9.</span> <span class="toc-text">9、当演讲内容较多时，一定要使用目录页。</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、如何准备演讲？"><span class="toc-number">3.</span> <span class="toc-text">二、如何准备演讲？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、一定要熟练地把演讲内容和PPT对应起来。"><span class="toc-number">3.1.</span> <span class="toc-text">1、一定要熟练地把演讲内容和PPT对应起来。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、一定要提前排练"><span class="toc-number">3.2.</span> <span class="toc-text">2、一定要提前排练</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、开启演讲者视图。"><span class="toc-number">3.3.</span> <span class="toc-text">3、开启演讲者视图。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、刚开始就引起观众兴趣"><span class="toc-number">3.4.</span> <span class="toc-text">4、刚开始就引起观众兴趣</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、多讲故事，多说人话"><span class="toc-number">3.5.</span> <span class="toc-text">5、多讲故事，多说人话</span></a></li></ol></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 11
+        </div>
+        <!-- search  -->
+        
+            <div class="site-search popup-trigger">
+                <span class="iconfont-archer search-icon">&#xe627;</span>
+            </div>
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2021 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "/2021/07/02/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BDPPT%E5%8F%8A%E6%BC%94%E8%AE%B2/" >如何做好PPT及演讲</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/15</span><a class="archive-post-title" href= "/2020/06/15/%E5%AE%9E%E6%96%BD%E6%95%8F%E6%8D%B7%EF%BC%9A%E5%9C%A8%E6%95%8F%E6%8D%B7%E7%8E%AF%E5%A2%83%E4%B8%AD%E4%BA%A4%E4%BB%98/" >实施敏捷：在敏捷环境中交付</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/15</span><a class="archive-post-title" href= "/2020/06/15/%E4%BB%86%E4%BA%BA%E5%BC%8F%E9%A2%86%E5%AF%BC%E5%8F%8A%E6%95%8F%E6%8D%B7%E5%9B%A2%E9%98%9F/" >仆人式领导及敏捷团队</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/11</span><a class="archive-post-title" href= "/2020/06/11/%E6%95%8F%E6%8D%B7%E7%AE%A1%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/" >敏捷管理学习笔记一</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/07</span><a class="archive-post-title" href= "/2020/05/07/%E9%A1%B9%E7%9B%AE%E7%BB%8F%E7%90%86%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB/" >项目经理的自我修养</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/16</span><a class="archive-post-title" href= "/2020/01/16/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9B%E6%9C%89%E6%84%8F%E4%B9%89%E7%9A%84%E8%AF%9D/" >记录一些有意义的话</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/30</span><a class="archive-post-title" href= "/2019/12/30/2019%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/" >2019年终总结</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/16</span><a class="archive-post-title" href= "/2019/12/16/%E9%A1%B9%E7%9B%AE%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%8F%8A%E6%95%8F%E6%8D%B7%E6%96%B9%E6%B3%95/" >项目生命周期及敏捷方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/13</span><a class="archive-post-title" href= "/2019/12/13/%E9%A1%B9%E7%9B%AE%E5%92%8C%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E7%9A%84%E7%90%86%E8%A7%A3%EF%BC%88%E6%9C%AA%E5%AE%8C%EF%BC%89/" >项目和项目管理的理解（未完）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2019/12/10/Hexo%E7%9A%84%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" >Hexo的基础命令及使用方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2019/12/10/%E5%85%B3%E4%BA%8E%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%88%9D%E8%A1%B7%E5%92%8C%E6%84%9F%E6%85%A8/" >关于搭建个人博客的初衷和感慨</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="杂文"><span class="iconfont-archer">&#xe606;</span>杂文</span>
+    
+        <span class="sidebar-tag-name" data-tags="敏捷项目管理"><span class="iconfont-archer">&#xe606;</span>敏捷项目管理</span>
+    
+        <span class="sidebar-tag-name" data-tags="总结"><span class="iconfont-archer">&#xe606;</span>总结</span>
+    
+        <span class="sidebar-tag-name" data-tags="演讲技巧"><span class="iconfont-archer">&#xe606;</span>演讲技巧</span>
+    
+        <span class="sidebar-tag-name" data-tags="项目管理"><span class="iconfont-archer">&#xe606;</span>项目管理</span>
+    
+        <span class="sidebar-tag-name" data-tags="项目管理 PMP"><span class="iconfont-archer">&#xe606;</span>项目管理 PMP</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "tanglongZhang"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+        <div class="site-search">
+  <div class="algolia-popup popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="iconfont-archer">&#xe609;</i>
+    </span>
+  </div>
+</div>
+        <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.8.0/dist/instantsearch.min.js" defer></script>
+        <script src="/scripts/search.js" defer></script>
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
+</html>
+
+
